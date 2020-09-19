@@ -6,7 +6,7 @@
         <template v-for="(item, index) in blockData">
           <a-popover :key="index">
             <template slot="content">
-              <span style="font-weight: bolder" class="back-text titlefonten">
+              <span style="font-weight: bolder" class="back-text titleFontEn">
                 {{ item.text }}
               </span>
             </template>

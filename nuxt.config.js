@@ -86,4 +86,10 @@ export default {
       },
     },
   },
+  /**
+   * 路由相关配置
+   */
+  router: {
+    middleware: ['mobileValidator'],
+  },
 }
