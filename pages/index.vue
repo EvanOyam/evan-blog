@@ -4,13 +4,7 @@
       <Logo />
       <h1 class="title">evan-blog</h1>
       <div class="links">
-        <a
-          class="button--green"
-          href="https://nuxtjs.org/"
-          rel="noopener noreferrer"
-          target="_blank"
-          >Documentation</a
-        >
+        <a class="button--green" @click="gotoAbout">About</a>
         <a
           class="button--grey"
           href="https://github.com/nuxt/nuxt.js"
@@ -32,7 +26,14 @@ import Logo from '@/components/Logo.vue'
     Logo,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  /**
+   * gotoAbout
+   */
+  public gotoAbout() {
+    this.$router.push('/about')
+  }
+}
 </script>
 
 <style>

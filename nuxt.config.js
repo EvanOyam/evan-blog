@@ -92,4 +92,11 @@ export default {
   router: {
     middleware: ['mobileValidator'],
   },
+  /**
+   * 页面加载进度条相关配置
+   */
+  loading: {
+    color: '#566C73',
+    height: '5px',
+  },
 }
