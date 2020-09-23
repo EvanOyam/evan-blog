@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+// todo about page
 import { Component, Vue } from 'vue-property-decorator'
 
 function getData(): Object {

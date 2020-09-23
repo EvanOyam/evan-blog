@@ -30,7 +30,11 @@ export default {
    ** Global CSS
    ** 改成 antd.less 配置 ant design vue 主题
    */
-  css: ['@/assets/css/font.less', 'ant-design-vue/dist/antd.less'],
+  css: [
+    '@/assets/css/font.less',
+    '@/assets/css/icon.less',
+    'ant-design-vue/dist/antd.less',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -81,6 +85,12 @@ export default {
           modifyVars: {
             'primary-color': '#566C73',
             'link-color': '#566C73',
+            'info-color': '#566C73',
+            'success-color': '#55b56a',
+            'processing-color': '#566C73',
+            'error-color': '#e1462b',
+            'highlight-color': '#e1462b',
+            'warning-color': '#f9bb4b',
           },
         },
       },

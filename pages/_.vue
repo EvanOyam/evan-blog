@@ -36,7 +36,9 @@ interface blockItem {
   className: String
 }
 
-@Component
+@Component({
+  layout: '404',
+})
 export default class NotFound extends Vue {
   /**
    * 左上角返回按钮相关的数据
@@ -66,11 +68,13 @@ export default class NotFound extends Vue {
 </script>
 
 <style lang="less" scoped>
+@import url('/assets/css/theme.less');
 .not-found-wrapper {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  background-color: #394d5c;
   .header {
     width: 100vw;
     height: 10vh;
@@ -91,13 +95,13 @@ export default class NotFound extends Vue {
         border-radius: 100%;
       }
       .red-block {
-        background-color: #e1462b;
+        background-color: @errorColor;
       }
       .orange-block {
-        background-color: #f9bb4b;
+        background-color: @warningColor;
       }
       .green-block {
-        background-color: #55b56a;
+        background-color: @successColor;
       }
     }
     .right-part {
