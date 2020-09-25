@@ -33,7 +33,7 @@ export default {
   css: [
     '@/assets/css/font.less',
     '@/assets/css/icon.less',
-    '@/assets/css/transition.less',
+    '@/assets/css/base.less',
     'ant-design-vue/dist/antd.less',
   ],
   /*
@@ -72,7 +72,14 @@ export default {
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
-  content: {},
+  content: {
+    liveEdit: false,
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-dark.css',
+      },
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
