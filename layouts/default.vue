@@ -64,7 +64,7 @@ body {
   }
   .main-container {
     background-color: #f9f9f9;
-    padding: 48px 80px;
+    padding: 30px 80px 48px 80px;
     flex: 1;
   }
 }
