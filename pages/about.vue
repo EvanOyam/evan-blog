@@ -40,7 +40,6 @@ export default class About extends Vue {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100%;
 }
 </style>

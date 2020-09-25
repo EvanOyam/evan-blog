@@ -44,6 +44,7 @@ export default class ArticleCard extends Vue {}
   display: flex;
   width: 100%;
   height: 280px;
+  transition: all 0.5s;
   img {
     height: 100%;
     width: 320px;
@@ -58,7 +59,6 @@ export default class ArticleCard extends Vue {}
       .tag {
         padding: 0 8px;
         margin: 0 8px;
-        cursor: pointer;
         background-color: #f5f5f5;
         border-radius: 4px;
         color: @primaryColor;
@@ -87,7 +87,6 @@ export default class ArticleCard extends Vue {}
       left: 10px;
       color: @primaryColor;
       font-weight: bold;
-      cursor: pointer;
       i {
         font-size: 12px;
         position: relative;
@@ -104,5 +103,10 @@ export default class ArticleCard extends Vue {}
       }
     }
   }
+}
+
+.article-card-wrapper:hover {
+  box-shadow: 0 0 10px rgb(223, 223, 223);
+  cursor: pointer;
 }
 </style>

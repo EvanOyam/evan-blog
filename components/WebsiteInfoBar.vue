@@ -20,7 +20,6 @@ export default class WebsiteInfoBar extends Vue {}
 
 <style lang="less" scoped>
 @import url('/assets/css/theme.less');
-
 .website-info-bar-wrapper {
   background-color: #9aa5a7;
   width: 100%;

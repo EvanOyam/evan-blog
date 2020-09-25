@@ -33,6 +33,7 @@ export default {
   css: [
     '@/assets/css/font.less',
     '@/assets/css/icon.less',
+    '@/assets/css/transition.less',
     'ant-design-vue/dist/antd.less',
   ],
   /*
@@ -109,4 +110,8 @@ export default {
     color: '#566C73',
     height: '5px',
   },
+  /**
+   * 页面过度动画
+   */
+  pageTransition: 'fadeout',
 }

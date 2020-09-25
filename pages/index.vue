@@ -69,7 +69,6 @@ export default class Home extends Vue {
         message: this.historyData.message,
       })
     }
-    console.log('this.historyData', this.historyData)
   }
 }
 </script>
