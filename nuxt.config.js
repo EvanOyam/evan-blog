@@ -114,4 +114,5 @@ export default {
    * 页面过度动画
    */
   pageTransition: 'fadeout',
+  layoutTransition: 'zoom',
 }

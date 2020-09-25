@@ -37,7 +37,7 @@ interface blockItem {
 }
 
 @Component({
-  layout: '404',
+  layout: 'none',
 })
 export default class NotFound extends Vue {
   /**

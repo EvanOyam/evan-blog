@@ -1,5 +1,5 @@
 <template>
-  <div class="article-card-wrapper">
+  <div class="article-card-wrapper" @click="gotoDetail(10001)">
     <img src="@/assets/img/home/default.png" alt="articleImg" />
     <div class="content">
       <div class="tag-box">
@@ -32,7 +32,14 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class ArticleCard extends Vue {}
+export default class ArticleCard extends Vue {
+  /**
+   * gotoDetail
+   */
+  public gotoDetail(id: number): void {
+    this.$router.push(`/detail/${id}`)
+  }
+}
 </script>
 
 <style lang="less" scoped>
