@@ -37,7 +37,7 @@ body {
   width: 1280px;
   min-height: 100vh;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 136px;
   background-color: #fff;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -63,7 +63,7 @@ body {
     }
   }
   .main-container {
-    background-color: #f8f7f3;
+    background-color: #f9f9f9;
     padding: 48px 80px;
     flex: 1;
   }
