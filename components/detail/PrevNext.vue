@@ -38,9 +38,7 @@ export default class PrevNext extends Vue {
 
 <style lang="less" scoped>
 .prev-next-wrapper {
-  a {
-    width: 100px;
-    height: 100px;
-  }
+  display: flex;
+  justify-content: space-between;
 }
 </style>
