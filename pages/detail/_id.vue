@@ -1,11 +1,29 @@
 <template>
   <div class="detail-wrapper">
     <div class="left-part">
+      <transition name="leftin">
+        <ul v-if="showCatalog" class="catalog">
+          <!-- // todo link.depth -->
+          <li
+            v-for="link of article.toc"
+            :key="link.id"
+            :class="{
+              'md-title-2': link.depth === 2,
+              'md-title-3': link.depth === 3,
+            }"
+          >
+            <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+          </li>
+        </ul>
+      </transition>
+      <i
+        :class="{ 'catalog-icon-dark': showCatalog }"
+        class="catalog-icon iconfont"
+        @click="toggleCatalog"
+        >&#xe601;</i
+      >
       <div
-        :style="{
-          backgroundImage:
-            'url(https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)',
-        }"
+        :style="{ backgroundImage: `url(${article.cover})` }"
         class="cover"
       ></div>
       <div class="content">
@@ -18,27 +36,13 @@
           </nuxt-link>
           <SearchInput />
         </div>
-        <div class="base-info">{{ createdAt }} • Evan</div>
         <h1 class="title titleFontEn">{{ article.title }}</h1>
-        <a-tag color="green">Code</a-tag>
-        <a-tag color="green">JavaScript</a-tag>
+        <div class="base-info">{{ createdAt }} • Evan</div>
       </div>
     </div>
     <div class="right-part">
       <div class="content">
-        <ul>
-          <!-- // todo link.depth -->
-          <li
-            v-for="link of article.toc"
-            :key="link.id"
-            :class="{ 'py-2': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }"
-          >
-            <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-          </li>
-        </ul>
         <nuxt-content :document="article" />
-        <p>Post created at: {{ createdAt }}</p>
-        <p>Post last updated: {{ updatedAt }}</p>
         <prev-next :prev="prev" :next="next" />
       </div>
     </div>
@@ -64,6 +68,7 @@ import { Component, Vue } from 'vue-property-decorator'
   },
 })
 export default class Detail extends Vue {
+  showCatalog: boolean = false
   article!: any
   get createdAt(): string {
     return new Date(this.article.createdAt).toLocaleDateString()
@@ -72,12 +77,19 @@ export default class Detail extends Vue {
   get updatedAt(): string {
     return new Date(this.article.updatedAt).toLocaleDateString()
   }
+
+  /**
+   * toggleCatalog
+   */
+  public toggleCatalog(): void {
+    this.showCatalog = !this.showCatalog
+  }
 }
 </script>
 
 <style lang="less" scoped>
+@import url('/assets/css/theme.less');
 .detail-wrapper {
-  width: 100vw;
   min-width: 1280px;
   min-height: 100vh;
   .left-part {
@@ -87,6 +99,36 @@ export default class Detail extends Vue {
     bottom: 0;
     width: 50%;
     min-width: 640px;
+    .catalog {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9;
+      min-width: 320px;
+      min-height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgb(223, 223, 223);
+      padding: 100px 20px 20px 42px;
+      list-style: none;
+      margin: 0;
+      li:hover {
+        a {
+          color: @successColor;
+        }
+      }
+    }
+    .catalog-icon {
+      position: fixed;
+      top: 58px;
+      left: 42px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+      z-index: 10;
+    }
+    .catalog-icon-dark {
+      color: @primaryColor;
+    }
     .cover {
       position: absolute;
       width: 100%;
@@ -122,12 +164,13 @@ export default class Detail extends Vue {
       .base-info {
         font-size: 18px;
         color: #fff;
-        margin-top: 66px;
+        text-align: right;
       }
       .title {
         font-size: 68px;
         color: #fff;
-        margin: 12px 0 0 0;
+        margin: 38px 0 0 0;
+        text-align: right;
       }
     }
   }

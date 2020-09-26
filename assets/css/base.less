@@ -1,3 +1,4 @@
+// ****** 放大动画效果 ******
 .zoom-enter-active {
   animation: zoom-in 0.5s;
 }
@@ -23,6 +24,7 @@
   }
 }
 
+// ****** 淡入淡出动画效果 ******
 .fadeout-enter-active {
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -34,19 +36,133 @@
   opacity: 0;
 }
 
+// ****** 左侧滑进动画效果 ******
+.leftin-enter-active {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.leftin-leave-active {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.leftin-enter,
+.leftin-leave-to {
+  transform: translateX(-100%);
+}
+
+// ****** md 样式配置 ******
+.nuxt-content h1 {
+  font-weight: bold;
+  font-size: 34px;
+  color: #566c73;
+  border-bottom: 1px solid #566c73;
+  padding-bottom: 14px;
+}
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 28px;
-  color: #e1462b;
+  color: #566c73;
+  margin-top: 42px;
+  border-bottom: 1px dashed #566c73;
+  padding-bottom: 14px;
 }
 .nuxt-content h3 {
   font-weight: bold;
   font-size: 22px;
+  color: #566c73;
+  margin: 12px 0;
 }
 .nuxt-content p {
   margin-bottom: 20px;
+  font-size: 16px;
+  a {
+    background: #f6ffed;
+    border-color: #b7eb8f;
+    padding: 0 4px;
+    margin: 0 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+  }
 }
-
+.nuxt-content code {
+  background-color: #f0f0f0;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: #566c73;
+}
+.nuxt-content li {
+  font-size: 16px;
+}
+.nuxt-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+  margin-bottom: 20px;
+  td,
+  th {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0.5em 1em;
+  }
+  td {
+    background-color: transparent;
+    border-bottom: 1px solid #cbcbcb;
+  }
+  caption {
+    color: #000;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+  }
+  thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+    th[align='right'] {
+      text-align: right;
+    }
+    th[align='left'] {
+      text-align: left;
+    }
+    th[align='center'] {
+      text-align: center;
+    }
+  }
+  tbody {
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+  tbody > tr:last-child > td {
+    border-bottom-width: 0;
+  }
+}
+.nuxt-content .nuxt-content-highlight pre {
+  background-color: #566c73;
+  code {
+    background-color: initial;
+    padding: 0;
+    border-radius: 0;
+    color: #fff;
+    .comment {
+      color: rgb(68, 68, 68);
+      font-style: italic;
+    }
+  }
+}
+.nuxt-content blockquote {
+  background-color: #f0f0f0;
+  padding: 10px 22px;
+  border-radius: 4px;
+  opacity: 0.8;
+  p,
+  ul {
+    margin-bottom: 0;
+  }
+}
 .icon.icon-link {
   background-image: url('~assets/img/detail/mark.svg');
   display: inline-block;
@@ -55,4 +171,12 @@
   background-size: 28px 28px;
   position: relative;
   top: 3px;
+}
+.md-title-2 {
+  font-size: 20px;
+  padding: 4px 0;
+}
+.md-title-3 {
+  padding-left: 22px;
+  font-size: 16px;
 }
