@@ -75,7 +75,7 @@ export default {
   content: {
     liveEdit: false,
     markdown: {
-      remarkPlugins: ['remark-emoji'],
+      remarkPlugins: ['remark-emoji', '~/plugins/remark-nuxt-mermaid.js'],
       prism: {
         theme: 'prism-themes/themes/prism-material-dark.css',
       },
