@@ -27,6 +27,7 @@
     "ant-design-vue": "^1.6.4",
     "nuxt": "^2.14.0",
     "prism-themes": "^1.4.0",
+    "remark-emoji": "^2.1.0",
     "vue-class-component": "^7.2.5",
     "vue-property-decorator": "^9.0.0"
   },

@@ -4059,6 +4059,11 @@ emojis-list@^3.0.0:
   resolved "https://registry.npm.taobao.org/emojis-list/download/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha1-VXBmIEatKeLpFucariYKvf9Pang=
 
+emoticon@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/emoticon/download/emoticon-3.2.0.tgz#c008ca7d7620fac742fe1bf4af8ff8fed154ae7f"
+  integrity sha1-wAjKfXYg+sdC/hv0r4/4/tFUrn8=
+
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/encodeurl/download/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -8836,6 +8841,15 @@ remark-autolink-headings@^6.0.1:
     extend "^3.0.0"
     unist-util-visit "^2.0.0"
 
+remark-emoji@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/remark-emoji/download/remark-emoji-2.1.0.tgz#69165d1181b98a54ad5d9ef811003d53d7ebc7db"
+  integrity sha1-aRZdEYG5ilStXZ74EQA9U9frx9s=
+  dependencies:
+    emoticon "^3.2.0"
+    node-emoji "^1.10.0"
+    unist-util-visit "^2.0.2"
+
 remark-external-links@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npm.taobao.org/remark-external-links/download/remark-external-links-7.0.0.tgz#f9415a622e2d965c4017c0dde7e659a061bd8b5c"
@@ -10370,7 +10384,7 @@ unist-util-visit-parents@^3.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
 
-unist-util-visit@^2.0.0:
+unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/unist-util-visit/download/unist-util-visit-2.0.3.tgz?cache=0&sync_timestamp=1594459251384&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Funist-util-visit%2Fdownload%2Funist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha1-w3A4kxRt9HIDu4qXla9H17lxIIw=
