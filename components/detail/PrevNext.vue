@@ -4,14 +4,20 @@
       v-if="prev"
       :to="{ name: 'detail-id', params: { id: prev.slug } }"
     >
-      {{ prev.title }}
+      <a-button size="large" class="btn" type="primary">
+        <i class="iconfont">&#xe685;</i>
+        <span>{{ prev.title }}</span>
+      </a-button>
     </NuxtLink>
     <span v-else>&nbsp;</span>
     <NuxtLink
       v-if="next"
       :to="{ name: 'detail-id', params: { id: next.slug } }"
     >
-      {{ next.title }}
+      <a-button size="large" class="btn" type="primary">
+        <span>{{ next.title }}</span>
+        <i class="iconfont">&#xe687;</i>
+      </a-button>
     </NuxtLink>
     <span v-else>&nbsp;</span>
   </div>
@@ -40,5 +46,24 @@ export default class PrevNext extends Vue {
 .prev-next-wrapper {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 52px;
+  .btn {
+    background-color: #55b56a;
+    border-color: #55b56a;
+    span {
+      margin: 0 6px;
+    }
+    i {
+      font-weight: bolder;
+    }
+  }
+  .btn:hover {
+    background-color: #f9bb4b;
+    border-color: #f9bb4b;
+  }
 }
 </style>

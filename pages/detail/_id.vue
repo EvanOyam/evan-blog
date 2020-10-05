@@ -182,7 +182,9 @@ export default class Detail extends Vue {
     right: 0;
     background-color: #fff;
     .content {
-      margin: 52px;
+      padding: 52px;
+      min-height: 100vh;
+      padding-bottom: 148px;
     }
   }
   .left-part:hover {

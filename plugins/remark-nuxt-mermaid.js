@@ -27,7 +27,9 @@ function render(source) {
     fs.outputFileSync(mmdPath, source)
 
     // mermaid.cli 生成 svg 文件
-    execSync(`mmdc -i ${mmdPath} -o ${svgPath} -b transparent`)
+    execSync(`mmdc -i ${mmdPath} -o ${svgPath} -b transparent`, {
+      timeout: 2000,
+    })
     svgSource = fs.readFileSync(svgPath, 'utf-8')
 
     // 清空临时文件
@@ -35,6 +37,14 @@ function render(source) {
     fs.removeSync(svgPath)
   } catch (error) {
     console.error('Error!!! Render SVG Rendering Failed')
+    fs.removeSync(mmdPath)
+    return `
+    <div style="background: #fcf3c2">
+      <h1 style="color: red; padding: 10px 18px; margin: 0">Warning!</h1>
+      <div style="color: #566c73; font-size: 16px; font-weight: bold; padding: 6px 18px; margin: 0">Render SVG Rendering Failed</div>
+      <div style="color: #566c73; font-size: 16px; font-weight: bold; padding: 6px 18px; margin: 0">${error.toString()}</div>
+    </div>
+    `
   }
 
   return svgSource

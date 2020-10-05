@@ -73,7 +73,7 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {
-    liveEdit: false,
+    liveEdit: true,
     markdown: {
       remarkPlugins: ['remark-emoji', '~/plugins/remark-nuxt-mermaid.js'],
       prism: {
