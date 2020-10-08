@@ -6,7 +6,7 @@
     >
       <a-button size="large" class="btn" type="primary">
         <i class="iconfont">&#xe685;</i>
-        <span>{{ prev.title }}</span>
+        <span>上一篇：{{ prev.title }}</span>
       </a-button>
     </NuxtLink>
     <span v-else>&nbsp;</span>
@@ -15,7 +15,7 @@
       :to="{ name: 'detail-id', params: { id: next.slug } }"
     >
       <a-button size="large" class="btn" type="primary">
-        <span>{{ next.title }}</span>
+        <span>下一篇：{{ next.title }}</span>
         <i class="iconfont">&#xe687;</i>
       </a-button>
     </NuxtLink>

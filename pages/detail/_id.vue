@@ -55,8 +55,14 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   layout: 'none',
   transition: 'bounce',
-  async asyncData({ $content, params }: any) {
-    const article = await $content(params.id).fetch()
+  async asyncData({ $content, params, redirect }: any) {
+    let article
+    try {
+      article = await $content('md', params.id).fetch()
+    } catch (error) {
+      // 如果查不到 md 就重定向到 404
+      redirect('/404')
+    }
 
     const [prev, next] = await $content()
       .only(['title', 'slug'])
